@@ -1,73 +1,572 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="utf-8">
-        <title>Freshly Weaved</title>
-        <link href="./style.css" rel="stylesheet"/>
-    </head>
-    <body>
-        <h1 id="title">
-            <a href="./infopage.html" style="font-size:2em">FRESHLY WEAVED<span class="blink">&darr;&darr;&darr;&darr;지도 따라 내려가기&darr;&darr;&darr;&darr;</span></a>
-        </h1>
-
-        <div>
-            <img id="background" src="background.png" alt="freshy weaved map" style="width: 100vw;">
-            <div class="spans">
-                <span id="tokyo"style="left:80px; top:1980px;"><a href="https://maps.app.goo.gl/ZiFbsLQSg71agqfEA" target="_blank"><strong>GWW9+99</strong></br>Mudaeruk, Seoul</a></span>
-                <span id="beijing"style="left:110px; top:1300px;"><a href="./beijingpage.html"><strong>Yangrou Hutong </strong><br/>Beijing</a></span>
-                <span id="bali"style="left:1300px; top:3185px;"><a href="https://maps.app.goo.gl/TfEk3fwERzTcEZFt6" target="_blank"><strong>84CX+6X</strong></br>Seminyak, Badung Regency</br>Bali, Indonesia</a></span>
-                <span id="jeju"style="left:1130px; top:870px;"><a href="./jejupage.html"><strong>Seopjikoji</strong><br/>Seongsan-eup, Seogwipo-si</br>jeju-do</a></span>
-                <span id="berlin"style="left:1200px; top:2700px;"><a href="./berlinpage.html"><strong>G9GV+PX</strong></br>Berlin, Germany</a></span>
-                <span id="leipzig"style="left:1200px; top:1098px;"><a href="https://gfzk.de/en/" target="_blank"><strong>89M8+M9</strong></br>Leipzig, Germany</a></span>
-                <span id="rotterdam"style="left:420px; top:3385px;"><a href="./amsterdampage.html"><strong>WC4V+2F</strong></br>Rotterdam, Netherlands</a></span>
-                <span id="amsterdam"style="left:120px; top:2600px;"><a href="https://maps.app.goo.gl/3JoXueVyVRHwvNSRA" target="_blank"><strong>9W6C+25</strong></br>Amsterdam, Netherlands</a></span>
-                <span id="mudaeryuk"style="left:380px; top:1100px;"><a href="./tokyopage.html"><strong>MRH5+V7</strong></br>Koto City, Tokyo, Japan</a></span>
-                <span id="yri"style="left:620px; top:1650px;"><a href="https://maps.app.goo.gl/G7cSabvTTE8upR7E9" target="_blank"><strong>GWWC+8J</strong></br>Yri, Seoul</a></span>
-                <span id="yri"style="left:640px; top:1820px;"><a href="./sokchopage.html"><strong>5FFV+3G</strong></br>Sockho, Gangwon-do</a></span>
-                <span id="mandong"style="left:550px; top:2950px;"><a href="https://www.youtube.com/watch?v=iV0zsC8MaEo" target="_blank"><strong>Mandong</strong></a></span>
-                <span id="andong"style=" left:316px; top:868px;"><a href="http://www.byeongsan.net/" target="_blank"><strong>Byeong San Seowon</strong></br>Andong</a></span>
-               
-                
-        </div>
-
-        <footer id="menu-bars">
-            <nav id="navigation">
-                <a class="menu-item" href="#bali" target="_self">19.04</a>
-                <a class="menu-item" href="#mandong" target="_self">&#8901;&#8901;&#8901;</a>
-                <a class="menu-item" href="#tokyo" target="_self">22.11</a>
-                <a class="menu-item" href="#rotterdam" target="_self">22-23</a>
-                <a class="menu-item" href="#mudaeryuk" target="_self">&#8901;&#8901;&#8901;</a>
-                <a class="menu-item" href="#jeju" target="_self">23.05</a>
-                <a class="menu-item" href="#beijing" target="_self">23.06</a>
-                <a class="menu-item" href="#amsterdam" target="_self">23.06</a>
-                <a class="menu-item" href="#amsterdam" target="_self">23.06</a>
-                <a class="menu-item" href="#yri" target="_self">&#8901;&#8901;&#8901;</a>
-                <a class="menu-item" href="#berlin" target="_self">23.08</a>
-                <a class="menu-item" href="#leipzig" target="_self">23.08</a>
-                <a class="menu-item" href="#andong" target="_self">23.08</a>
-     
-               
-               
-     
-            </nav>
-        </footer>
-
-    </body>
-
-      <script>
-        
-        function leftOpen() {
-        $('#timelinbx').css("width", $(window).width() - 280);
-            }
-        function leftClose() {
-        $('#timelinbx').css("width", "100%");
-            }
- 
-         $(window).resize(function() {        
-        $('.timelinbx').css('width', $(window).width() - 50 );        
-        $('.timelinbx').css('height', $(window).height() - 50 );   
-            });
-    </script>
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《신:   》</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&display=swap');
     
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Serif KR', 'Nanum Myeongjo', serif;
+      background: #f5f5f0;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 2rem;
+      background: rgba(245, 245, 240, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .header p {
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      opacity: 0.6;
+      letter-spacing: 0.1em;
+    }
+
+    .main-content {
+      padding-top: 120px;
+      position: relative;
+    }
+
+    .timeline {
+      position: absolute;
+      top: 140px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .timeline-label {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.75rem;
+      opacity: 0.5;
+    }
+
+    .timeline-label.start { left: 0; }
+    .timeline-label.end { right: 0; }
+
+    .layer-container {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sin-layer {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      filter: blur(0.5px);
+      mix-blend-mode: multiply;
+      user-select: none;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .sin-layer:hover {
+      filter: none;
+      opacity: 0.9 !important;
+      z-index: 100;
+    }
+
+    .layer-info {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      padding: 1.5rem;
+      background: rgba(26, 26, 26, 0.95);
+      color: #f5f5f0;
+      border-radius: 2px;
+      max-width: 400px;
+      animation: fadeIn 0.3s ease-out;
+      display: none;
+    }
+
+    .layer-info.active {
+      display: block;
+    }
+
+    .audio-player {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: rgba(26, 26, 26, 0.95);
+      color: #f5f5f0;
+      border-radius: 2px;
+    }
+
+    .play-button {
+      background: none;
+      border: 1px solid rgba(245, 245, 240, 0.3);
+      color: #f5f5f0;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .play-button:hover {
+      background: rgba(245, 245, 240, 0.1);
+    }
+
+    .interview-tabs {
+      position: fixed;
+      bottom: 6rem;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 1500;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .interview-tab {
+      background: rgba(26, 26, 26, 0.95);
+      color: #f5f5f0;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 280px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      animation: slideIn 0.4s ease-out;
+    }
+
+    .interview-tab.expanded {
+      width: 400px;
+    }
+
+    .tab-header {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tab-header.expanded {
+      border-bottom: 1px solid rgba(245, 245, 240, 0.2);
+    }
+
+    .close-button {
+      background: none;
+      border: none;
+      color: #f5f5f0;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.3s;
+      padding: 0.25rem;
+      line-height: 1;
+    }
+
+    .close-button:hover {
+      opacity: 1;
+    }
+
+    .tab-content {
+      padding: 1rem;
+      display: none;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .description-section {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      line-height: 1.8;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    .analysis-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .analysis-box {
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.5);
+      border-left: 3px solid #1a1a1a;
+      margin-bottom: 2rem;
+    }
+
+    .stats-grid {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-box {
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>《신:&nbsp;&nbsp;&nbsp;》</h1>
+    <p>신문의 실제 발행 시기 : 현재 시점의 기록 시간</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Timeline -->
+    <div class="timeline">
+      <span class="timeline-label start">1938</span>
+      <span class="timeline-label end">2025</span>
+    </div>
+
+    <!-- Sin Layers -->
+    <div class="layer-container" id="layerContainer"></div>
+
+    <!-- Layer Info Panel -->
+    <div class="layer-info" id="layerInfo">
+      <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 0.5rem; letter-spacing: 0.15em;" id="infoEra"></div>
+      <div style="font-size: 0.75rem; opacity: 0.6; margin-bottom: 0.5rem; letter-spacing: 0.1em;">
+        기록 #<span id="infoId"></span>
+      </div>
+      <div style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem;" id="infoNewspaper"></div>
+      <div style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 1rem;" id="infoDateLabel">
+        발행일: <span id="infoDate"></span>
+      </div>
+      <div style="padding: 0.75rem; margin-bottom: 0.75rem; background: rgba(168, 255, 96, 0.1); border-left: 2px solid #a8ff60; font-size: 0.8rem; line-height: 1.5; display: none;" id="infoOriginalSource"></div>
+      <div style="padding: 0.75rem 0; border-top: 1px solid rgba(245, 245, 240, 0.2); margin-bottom: 0.75rem;">
+        <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 0.25rem; letter-spacing: 0.1em;">서체 특징</div>
+        <div style="font-size: 0.85rem; line-height: 1.5;" id="infoTypeface"></div>
+      </div>
+      <div style="font-size: 0.8rem; line-height: 1.6; opacity: 0.8;" id="infoContext"></div>
+    </div>
+  </main>
+
+  <!-- Audio Player -->
+  <div class="audio-player">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.6;">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+    </svg>
+    <div style="font-size: 0.9rem; letter-spacing: 0.05em;">그리드쉬프트</div>
+    <button class="play-button" id="playButton">
+      <svg id="playIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+      <svg id="pauseIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+        <rect x="6" y="4" width="4" height="16"></rect>
+        <rect x="14" y="4" width="4" height="16"></rect>
+      </svg>
+    </button>
+    <audio id="audio" loop>
+      <source src="gridshift.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Interview Tabs Container -->
+  <div class="interview-tabs" id="interviewTabs"></div>
+
+  <!-- Description -->
+  <div class="description-section">
+    <p>
+      그 신은 아주 오래전부터 있었다. 기록자들은 그리드쉬프트를 보도로, 리듬을 사건으로 바라본다. 
+      신문은 사건 흐름을 단순화하여 압축한다. 《신:   》은 '신문의 실제 발행 시기: 그 신을 현재 시점의 
+      기록자들이 기록한 시간'을 보여주며, 오늘의 시대에 어울리는 또 다른 신의 형태를 제안하고자 한다.
+    </p>
+    <p style="margin-top: 1.5rem;">
+      네 장의 트레이싱지와 그 위에 새로운 신을 기록한 한 장의 트레이싱지를 스캔하여 겹쳐 놓은 이미지는, 
+      기록의 물리적 흔적과 시간의 감각을 디지털 화면 위에 드러낸다.
+    </p>
+    <p style="margin-top: 2rem; padding: 1.5rem; background: rgba(168, 255, 96, 0.05); border-left: 3px solid rgba(168, 255, 96, 0.5); font-weight: 600;">
+      이 사건을 다른 방식으로 기록하고, 신문처럼 한 지면에 압축하기 위해 세 명의 기록자가 
+      신들의 문(文)을 기록했다. 그렇게 모인 기록 위에서 스스로 사고하고 판단하는 
+      <strong style="color: #a8ff60;"> 새로운 '신'을 창조</strong>하며, 
+      오늘의 시대에 어울리는 또 다른 신의 형태를 제안하고자 한다.
+    </p>
+  </div>
+
+  <!-- Analysis Section -->
+  <div class="analysis-section">
+    <div class="analysis-box">
+      <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: 0.02em;">
+        그리드쉬프트 분석
+      </h3>
+      <p style="line-height: 1.8; opacity: 0.8; font-size: 0.95rem;">
+        작업자들은 '그리드쉬프트.mp3'를 보도로, 리듬을 사건으로 바라본다. 한 작업자는 16분음표로 
+        박수를 치며 리듬을 체감했지만, 기계 분석에서는 1300BPM이 넘는 초고속 루프가 드러났다. 
+        신문 또한 현실의 사건 흐름을 단순화하여 독자가 이해하기 쉬운 단위로 압축한다.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div style="font-size: 0.75rem; opacity: 0.6; margin-bottom: 0.5rem;">인간의 감각</div>
+          <div style="font-size: 1.5rem; font-weight: 700;">16분음표</div>
+        </div>
+        <div class="stat-box">
+          <div style="font-size: 0.75rem; opacity: 0.6; margin-bottom: 0.5rem;">기계의 측정</div>
+          <div style="font-size: 1.5rem; font-weight: 700;">1300+ BPM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 데이터 - 포스터 레이아웃 기준 재배치
+    const sinLayers = [
+      { id: 1, year: 1938, newspaper: '동아일보', date: '1938.11.20', era: '일제강점기', image: 'sin1.png', x: 12, y: 12, opacity: 0.08, rotation: -3, scale: 0.75, typeface: '산세리프 단순화, 한자 기반의 한글', context: '일제의 검열이 심했던 시기, 일본제 약 광고 속 글자' },
+      { id: 2, year: 1964, newspaper: '경향신문', date: '1964.05.20', era: '산업화/군사정권', image: 'sin2.png', x: 18, y: 25, opacity: 0.12, rotation: 2, scale: 0.8, typeface: '불규칙적인 한자 레터링', context: '해방 직후, 검열이 심한 시기 아직 한자에서 벗어나지 못한 고유명사' },
+      { id: 3, year: 1980, newspaper: '동아일보', date: '1980', era: '산업화/군사정권', image: 'sin3.png', x: 38, y: 32, opacity: 0.18, rotation: -1.5, scale: 1.0, typeface: '굵은 명조, 획 간격 안정적', context: '언론의 왜곡과 탄압' },
+      { id: 4, year: 1980, newspaper: '경향신문', date: '1980', era: '산업화/군사정권', image: 'sin4.png', x: 42, y: 38, opacity: 0.22, rotation: 1, scale: 1.1, typeface: '굵은 명조, 직선적 안정감', context: '보수적/권위적, 정권과 긴밀한 관계' },
+      { id: 5, year: 1980, newspaper: '매일경제', date: '1980', era: '산업화/군사정권', image: 'sin5.png', x: 45, y: 42, opacity: 0.25, rotation: -0.5, scale: 1.2, typeface: '명조/고딕/혼합, 5.18 영향', context: '5.18 민주화운동 이후 저항 언론' },
+      { id: 6, year: 1993, newspaper: '조선일보', date: '1993.9.2', era: '민주화~현대', image: 'sin6.png', x: 52, y: 35, opacity: 0.28, rotation: 2, scale: 0.95, typeface: '세리프 헤드라인', context: '한글의 디지털화 진행으로 서체 개발' },
+      { id: 7, year: 1997, newspaper: '동아일보', date: '1997.11.15', era: '민주화~현대', image: 'sin7.png', x: 55, y: 45, opacity: 0.30, rotation: -1.5, scale: 1.0, typeface: '명조체', context: '김영삼 대통령 대선 시기 당시, 신한국당과의 마찰로서 언론이 기능' },
+      { id: 8, year: 1997, newspaper: '동아일보', date: '1997.11.15', era: '민주화~현대', image: 'sin8.png', x: 58, y: 40, opacity: 0.32, rotation: 0.5, scale: 1.05, typeface: '산세리프 계열의 커스텀 폰트', context: '하나로 통신이라는 회사 로고로, 인터넷 보급이 보편화됨' },
+      { id: 9, year: 1999, newspaper: '경향신문', date: '1999.7.20', era: '민주화~현대', image: 'sin9.png', x: 62, y: 48, opacity: 0.35, rotation: -2, scale: 1.1, typeface: '굵은 명조체', context: '인터넷이 언론/정보 유통 채널로 본격 등장' },
+      { id: 10, year: 2000, newspaper: '오마이뉴스', date: '2000', era: '디지털 시대', image: 'sin10.png', x: 15, y: 72, opacity: 0.15, rotation: 3, scale: 0.85, typeface: '산세리프, 단순화, 균형적', context: '시민 기자 참여, 온라인 저널리즘 개척' },
+      { id: 11, year: 2020, newspaper: '조선일보', date: '2020', era: '디지털 시대', image: 'sin11.png', x: 72, y: 22, opacity: 0.40, rotation: -1, scale: 1.0, typeface: '굵은 고딕체(제목)/명조체(본문)', context: '코로나19 발생/장기화' },
+      { id: 12, year: 2020, newspaper: '조선일보', date: '2020', era: '디지털 시대', image: 'sin12.png', x: 75, y: 28, opacity: 0.42, rotation: 0.5, scale: 1.05, typeface: '굵은 고딕체(제목), 명조체(본문)', context: '코로나19 발생/장기화' },
+      { id: 13, year: 2021, newspaper: '조선일보', date: '2021', era: '디지털 시대', image: 'sin13.png', x: 78, y: 32, opacity: 0.45, rotation: -0.5, scale: 1.1, typeface: '명조체', context: '코로나19 장기화/백신개발' },
+      { id: 14, year: 2021, newspaper: '매일경제', date: '2021', era: '디지털 시대', image: 'sin14.png', x: 72, y: 75, opacity: 0.40, rotation: 2, scale: 1.0, typeface: '명조체, 고딕체 혼용', context: '코로나19 장기화/백신개발' },
+      { id: 15, year: 2021, newspaper: '조선일보', date: '2021', era: '디지털 시대', image: 'sin15.png', x: 76, y: 78, opacity: 0.43, rotation: -1, scale: 1.05, typeface: '명조체, 고딕체 혼용', context: '코로나19 백신접종' },
+      { id: 16, year: 2025, newspaper: '새로운 신', date: '2025.09.16', era: '창작', image: 'sin16.png', x: 80, y: 30, opacity: 0.60, rotation: 0, scale: 1.15, typeface: '획의 굵기가 비교적 일정, 세로획 강조, 현대적 느낌', context: '세 명의 기록자가 모은 기록 위에서 스스로 사고하고 판단하는 새로운 신을 창조함', isCreated: true, originalSource: '서울신문(2025.04.04) 윤석열 대통령 탄핵 호외를 기반으로 창작' },
+    ];
+
+    const interviews = [
+      {
+        name: '기록자 A',
+        role: '리듬 분석가',
+        quote: '16분음표로 박수를 치며 리듬을 체감했습니다. 하지만 기계는 1300BPM이 넘는 초고속 루프를 발견했죠. 인간의 감각과 기계의 측정 사이에는 이런 간극이 존재합니다.',
+      },
+      {
+        name: '기록자 B',
+        role: '문자 수집가',
+        quote: '신문 속 \'신\'자를 수집하며 각 시대의 맥락을 읽었습니다. 같은 글자지만, 인쇄 방식, 서체, 배치가 모두 달랐어요. 글자는 시대의 지문입니다.',
+      },
+      {
+        name: '기록자 C',
+        role: '레이어 구성가',
+        quote: '트레이싱지를 겹치며 과거와 현재가 동시에 존재하는 순간을 만들고 싶었습니다. 투명도는 시간의 거리이고, 겹침은 역사의 무게입니다.',
+      },
+    ];
+
+    // 레이어 렌더링
+    const container = document.getElementById('layerContainer');
+    sinLayers.forEach(layer => {
+      const div = document.createElement('div');
+      div.className = 'sin-layer';
+      div.style.opacity = layer.opacity;
+      div.style.left = `${layer.x}%`;
+      div.style.top = `${layer.y}%`;
+      div.style.transform = `translate(-50%, -50%) rotate(${layer.rotation}deg) scale(${layer.scale})`;
+      div.style.backgroundImage = `url(${layer.image})`;
+      
+      div.addEventListener('mouseenter', () => {
+        const infoEra = document.getElementById('infoEra');
+        const infoDateLabel = document.getElementById('infoDateLabel');
+        const infoContext = document.getElementById('infoContext');
+        const infoOriginalSource = document.getElementById('infoOriginalSource');
+        
+        if (layer.isCreated) {
+          infoEra.textContent = '★ 창작된 신';
+          infoEra.style.color = '#a8ff60';
+          infoDateLabel.innerHTML = '창작 일자: <span id="infoDate">' + layer.date + '</span>';
+          infoContext.style.fontStyle = 'normal';
+          infoContext.style.fontWeight = '600';
+          infoOriginalSource.textContent = layer.originalSource;
+          infoOriginalSource.style.display = 'block';
+        } else {
+          infoEra.textContent = layer.era;
+          infoEra.style.color = '#f5f5f0';
+          infoDateLabel.innerHTML = '발행일: <span id="infoDate">' + layer.date + '</span>';
+          infoContext.style.fontStyle = 'italic';
+          infoContext.style.fontWeight = '400';
+          infoOriginalSource.style.display = 'none';
+        }
+        
+        document.getElementById('infoId').textContent = layer.id;
+        document.getElementById('infoNewspaper').textContent = layer.newspaper;
+        document.getElementById('infoDate').textContent = layer.date;
+        document.getElementById('infoTypeface').textContent = layer.typeface;
+        document.getElementById('infoContext').textContent = layer.context;
+        document.getElementById('layerInfo').classList.add('active');
+      });
+      
+      div.addEventListener('mouseleave', () => {
+        document.getElementById('layerInfo').classList.remove('active');
+      });
+      
+      container.appendChild(div);
+    });
+
+    // 오디오 컨트롤
+    const audio = document.getElementById('audio');
+    const playButton = document.getElementById('playButton');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    
+    playButton.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+      } else {
+        audio.pause();
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+      }
+    });
+
+    // 인터뷰 탭 시스템
+    let tabIdCounter = 0;
+    const interviewTabsContainer = document.getElementById('interviewTabs');
+
+    function createInterviewTab() {
+      const randomIndex = Math.floor(Math.random() * interviews.length);
+      const interview = interviews[randomIndex];
+      const tabId = tabIdCounter++;
+      const timestamp = new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' });
+
+      const tab = document.createElement('div');
+      tab.className = 'interview-tab';
+      tab.id = `tab-${tabId}`;
+      tab.innerHTML = `
+        <div class="tab-header" id="header-${tabId}">
+          <div style="flex: 1;">
+            <div style="font-size: 0.7rem; opacity: 0.5; letter-spacing: 0.1em; margin-bottom: 0.25rem;">
+              ${timestamp}
+            </div>
+            <div style="font-size: 0.9rem; font-weight: 700; letter-spacing: 0.02em;">
+              ${interview.name}
+            </div>
+            <div class="tab-preview" style="font-size: 0.75rem; opacity: 0.6; margin-top: 0.25rem;">
+              ${interview.role}
+            </div>
+          </div>
+          <button class="close-button" onclick="closeTab(${tabId}, event)">×</button>
+        </div>
+        <div class="tab-content" id="content-${tabId}">
+          <div style="font-size: 0.8rem; opacity: 0.6; margin-bottom: 1rem; letter-spacing: 0.05em;">
+            ${interview.role}
+          </div>
+          <blockquote style="margin: 0; padding: 1rem 0; line-height: 1.7; font-size: 0.9rem; border-top: 1px solid rgba(245, 245, 240, 0.2); border-bottom: 1px solid rgba(245, 245, 240, 0.2);">
+            "${interview.quote}"
+          </blockquote>
+          <div style="margin-top: 1rem; font-size: 0.65rem; opacity: 0.4; text-align: right; letter-spacing: 0.1em;">
+            60초 후 자동 삭제
+          </div>
+        </div>
+      `;
+
+      tab.addEventListener('click', (e) => {
+        if (e.target.classList.contains('close-button')) return;
+        toggleTabExpansion(tabId);
+      });
+
+      interviewTabsContainer.appendChild(tab);
+
+      // 60초 후 자동 삭제
+      setTimeout(() => {
+        const tabElement = document.getElementById(`tab-${tabId}`);
+        if (tabElement) {
+          tabElement.remove();
+        }
+      }, 60000);
+    }
+
+    function toggleTabExpansion(tabId) {
+      const tab = document.getElementById(`tab-${tabId}`);
+      const header = document.getElementById(`header-${tabId}`);
+      const content = document.getElementById(`content-${tabId}`);
+      
+      const isExpanded = tab.classList.contains('expanded');
+      
+      if (isExpanded) {
+        tab.classList.remove('expanded');
+        header.classList.remove('expanded');
+        content.classList.remove('active');
+        tab.querySelector('.tab-preview').style.display = 'block';
+      } else {
+        tab.classList.add('expanded');
+        header.classList.add('expanded');
+        content.classList.add('active');
+        tab.querySelector('.tab-preview').style.display = 'none';
+      }
+    }
+
+    function closeTab(tabId, event) {
+      event.stopPropagation();
+      const tab = document.getElementById(`tab-${tabId}`);
+      if (tab) {
+        tab.remove();
+      }
+    }
+
+    // 5초 후 첫 탭, 이후 30초마다 새 탭
+    setTimeout(createInterviewTab, 5000);
+    setInterval(createInterviewTab, 30000);
+  </script>
+</body>
 </html>
